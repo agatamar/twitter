@@ -9,5 +9,7 @@ urlpatterns = [
     #      name='index'),
     path('', views.TweetListView.as_view(),
          name='index'),
+    path('register/',views.RegisterView.as_view(),name='register'),
+    path('compose/',views.ComposeView.as_view(),name='compose'),
 
 ]
