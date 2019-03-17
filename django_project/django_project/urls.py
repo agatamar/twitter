@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('twitter.urls')),
@@ -31,4 +33,5 @@ urlpatterns = [
          auth_views.PasswordResetView.as_view(
              template_name='twitter/password_reset.html'),
          name='password-reset'),
-]
+    path('avatar/',include('avatar.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

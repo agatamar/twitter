@@ -1,0 +1,11 @@
+{% extends 'twitter/base.html' %}
+{% load crispy_forms_tags %}
+{% load avatar_tags %}
+{% block content %}
+<form action="" method="POST">
+                {% csrf_token %}
+                    <small class="text-muted">Add message:</small>
+                    <small class="text-muted">{{ form|crispy }}</small>
+                    <button class="btn btn-outline-info" type="submit">Send</button>
+ </form>
+{% endblock content %}
